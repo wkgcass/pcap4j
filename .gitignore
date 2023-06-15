@@ -13,4 +13,4 @@ gradle-app.setting
 .gradletasknamecache
 
 .java-version
-
+.flattened-pom.xml
