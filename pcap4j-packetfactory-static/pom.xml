@@ -9,18 +9,18 @@
   <description>Static implementations of Pcap4J packet factory.</description>
 
   <parent>
-    <groupId>org.pcap4j</groupId>
+    <groupId>io.vproxy</groupId>
     <artifactId>pcap4j</artifactId>
     <version>1.8.3-SNAPSHOT</version>
   </parent>
 
   <dependencies>
     <dependency>
-      <groupId>org.pcap4j</groupId>
+      <groupId>io.vproxy</groupId>
       <artifactId>pcap4j-core</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.pcap4j</groupId>
+      <groupId>io.vproxy</groupId>
       <artifactId>pcap4j-packettest</artifactId>
       <scope>test</scope>
       <type>test-jar</type>

@@ -9,7 +9,7 @@
   <description>The core module of Pcap4J.</description>
 
   <parent>
-    <groupId>org.pcap4j</groupId>
+    <groupId>io.vproxy</groupId>
     <artifactId>pcap4j</artifactId>
     <version>1.8.3-SNAPSHOT</version>
   </parent>

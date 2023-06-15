@@ -9,14 +9,14 @@
   <description>Tests of Pcap4J packet classes.</description>
 
   <parent>
-    <groupId>org.pcap4j</groupId>
+    <groupId>io.vproxy</groupId>
     <artifactId>pcap4j</artifactId>
     <version>1.8.3-SNAPSHOT</version>
   </parent>
 
   <dependencies>
     <dependency>
-      <groupId>org.pcap4j</groupId>
+      <groupId>io.vproxy</groupId>
       <artifactId>pcap4j-core</artifactId>
     </dependency>
     <dependency>

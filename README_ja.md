@@ -174,12 +174,12 @@ pom.xmlに以下のような記述を追加する。
   ...
   <dependencies>
     <dependency>
-      <groupId>org.pcap4j</groupId>
+      <groupId>io.vproxy</groupId>
       <artifactId>pcap4j-core</artifactId>
       <version>1.8.2</version>
     </dependency>
     <dependency>
-      <groupId>org.pcap4j</groupId>
+      <groupId>io.vproxy</groupId>
       <artifactId>pcap4j-packetfactory-static</artifactId>
       <version>1.8.2</version>
     </dependency>
