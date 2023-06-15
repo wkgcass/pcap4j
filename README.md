@@ -174,12 +174,12 @@ Add a dependency to the pom.xml as like below:
     <dependency>
       <groupId>io.vproxy</groupId>
       <artifactId>pcap4j-core</artifactId>
-      <version>1.8.2</version>
+      <version>1.8.3.3</version>
     </dependency>
     <dependency>
       <groupId>io.vproxy</groupId>
       <artifactId>pcap4j-packetfactory-static</artifactId>
-      <version>1.8.2</version>
+      <version>1.8.3.3</version>
     </dependency>
        ...
   </dependencies>
