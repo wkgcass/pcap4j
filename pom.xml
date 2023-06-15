@@ -36,7 +36,7 @@
 
   <distributionManagement>
     <snapshotRepository>
-      <id>s01-snap</id>
+      <id>s01</id>
       <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
     </snapshotRepository>
     <repository>
@@ -158,6 +158,14 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
           <version>3.0.1</version>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <goals>
+                <goal>jar-no-fork</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -175,6 +183,14 @@
             <source>8</source>
             <doclint>all,-reference</doclint>
           </configuration>
+          <executions>
+            <execution>
+              <id>attach-javadocs</id>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -191,6 +207,9 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
           <version>3.0.0-M1</version>
+          <configuration>
+            <skip>true</skip>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -270,6 +289,15 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-gpg-plugin</artifactId>
           <version>1.6</version>
+          <executions>
+            <execution>
+              <id>sign-artifacts</id>
+              <phase>verify</phase>
+              <goals>
+                <goal>sign</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
