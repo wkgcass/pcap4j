@@ -1,0 +1,80 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'signing'
+}
+
+group = 'io.vproxy'
+version = '1.8.3.3'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
+
+sourceCompatibility = 11.0
+targetCompatibility = 11.0
+
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+javadoc {
+    exclude '**/*.java'
+}
+
+tasks.withType(GenerateModuleMetadata) {
+    enabled = false
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+            artifactId 'pcap4j'
+
+            pom {
+                name = 'Pcap4J'
+                description = 'A Java library for capturing, crafting and sending packets.'
+                url = 'https://github.com/kaitoy/pcap4j'
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'http://www.opensource.org/licenses/mit-license.php'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'kaitoy'
+                        name = 'Kaito Yamada'
+                        email = 'kaitoy@pcap4j.org'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git@github.com:kaitoy/pcap4j.git'
+                    developerConnection = 'scm:git:git@github.com:kaitoy/pcap4j.git'
+                    url = 'https://github.com/kaitoy/pcap4j.git'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username 'wkgcass'
+                password System.getProperty("MavenPublishPassword")
+            }
+            def releasesRepoUrl = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
+            url = releasesRepoUrl
+        }
+    }
+}
+
+signing {
+    if (!System.getProperty("MavenLocalInstall", "false").equals("true")) {
+        sign publishing.publications.maven
+    }
+}
